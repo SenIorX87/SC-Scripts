@@ -224,4 +224,5 @@ choice /c 12 /n /t 20 /d 1 /m "Pulse un número: 1 Reiniciar ya, 2 Reiniciar en 
         shutdown /r /f /t 180
 
 :fin
+
 endlocal
