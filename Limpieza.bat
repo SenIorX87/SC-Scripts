@@ -1,9 +1,6 @@
 @echo off
 rem comprueba si se esta ejecutando a pantalla completa, si no lo está, vuelve a ejecutar el script en modo maximizado
-if /I not "%~1"=="MAX" (
-    start "" /MAX "%~f0" MAX
-    exit /b
-)
+powershell -NoProfile -WindowStyle Hidden -Command "$sig='[DllImport(\"kernel32.dll\")]public static extern IntPtr GetConsoleWindow();[DllImport(\"user32.dll\")]public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);';$t=Add-Type -MemberDefinition $sig -Name Win32 -Namespace Console -PassThru;$h=$t::GetConsoleWindow();$t::ShowWindow($h,3)|Out-Null" >nul 2>&1
 cls
 color 0a
 setlocal enabledelayedexpansion
