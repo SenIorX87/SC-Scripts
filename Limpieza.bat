@@ -80,6 +80,7 @@ if %errorlevel%==0 (
     color 04
     cls
     echo NO ESTÁS EN MODO ADMINISTRADOR, HAZ CLICK DERECHO Y EJECUTA COMO ADMINISTRADOR.
+    pause
     goto :fin
 )
 
